@@ -1,0 +1,40 @@
+<template name="lobby">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <a class="brand" href="/">Test chat app</a>
+
+        <a class="brand" href="lobby">Lobby</a>
+        <a class="brand" href="room">Room</a>
+        
+        <ul class="nav pull-right">                    
+            <li><a>{{> loginButtons align="right"}}</a></li>
+        </ul>
+    </div>
+</div>
+<div class="span12 well">
+                {{> room_input}}
+            </div>
+
+<div class="span4 well">
+                {{> rooms}}
+            </div>
+
+</template>
+
+<template name="room_input">
+    <input type="text" id="msg" placeholder="Create Room..." style="width: 50%; margin-bottom: 0px">
+    <input type="button" value="Create Room" class="btn btn-primary room">
+</template>
+
+<template name="rooms">
+    <h4>Join a room:</h4>
+    <ul>
+    {{#each rooms}}
+        {{> room}}
+    {{/each}}
+    </ul>
+</template>
+
+<template name="room">
+    <li><a href='room'>{{roomname}}</a></li>
+</template>
